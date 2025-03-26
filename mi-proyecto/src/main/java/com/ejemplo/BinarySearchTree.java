@@ -1,3 +1,8 @@
+/**
+ * Clase BinarySearchTree que implementa un árbol de búsqueda binaria.
+ *
+ * @param <E> Tipo de elementos que deben ser comparables.
+ */
 package com.ejemplo;
 
 import java.util.ArrayList;
@@ -18,6 +23,11 @@ public class BinarySearchTree<E extends Comparable<E>> {
         }
     }
 
+    /**
+     * Inserta un nuevo elemento en el árbol.
+     * 
+     * @param element Elemento a insertar.
+     */
     public void insert(E element) {
         root = insertRecursive(root, element);
     }
@@ -38,6 +48,12 @@ public class BinarySearchTree<E extends Comparable<E>> {
         return current;
     }
 
+    /**
+     * Busca un elemento en el árbol.
+     * 
+     * @param key Clave del elemento a buscar.
+     * @return El elemento encontrado o null si no se encuentra.
+     */
     public E search(E key) {
         Node result = searchRecursive(root, key);
         return result != null ? result.data : null;
@@ -57,6 +73,11 @@ public class BinarySearchTree<E extends Comparable<E>> {
         }
     }
 
+    /**
+     * Realiza un recorrido en orden del árbol y devuelve una lista de elementos.
+     * 
+     * @return Lista de elementos en orden.
+     */
     public List<E> inorderTraversal() {
         List<E> result = new ArrayList<>();
         inorderRecursive(root, result);
